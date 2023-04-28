@@ -1,0 +1,27 @@
+
+/******************************************************footer*****************************/
+#footer-3wa {
+  background-color: #5c525d;
+  text-align: center;
+  color: white;
+  padding: 1% 0;
+  margin-top:1% ;
+  font-size: 1.1rem;
+}
+
+#footer-3wa p {
+  color: white;
+ 
+}
+
+
+#footer-3wa a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+#footer-3wa img {
+  width: 5rem;
+  height: 5rem;
+}

@@ -1,0 +1,23 @@
+body {
+  min-height : 100vh;
+  display : flex;
+  flex-direction : column;
+  justify-content : space-between;
+}
+
+main {
+  margin-top : 0;
+  margin-bottom : auto;
+  flex-grow : 2;
+}
+
+.post-header, .main-header {
+  background : url(../img/fond.jpg) no-repeat center top;
+  background-size : cover;
+}
+
+@media screen and (min-width : 960px) {
+  .card {
+    width : calc(100% /4 - 1rem );
+  }
+}

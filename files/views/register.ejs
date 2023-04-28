@@ -1,0 +1,19 @@
+<%- include('./partials/headerAdmin') %>
+<div class="register ">
+    <form action="/signup" method="post" >
+      <h3 class="mb-4">Register</h3>
+      <div class="mb-3">
+        <label for="register-email" class="form-label">Email address</label>
+        <input type= "email" name= "email" class= "form-control" id="register-email" aria-describedly="emailHelp" />
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <div class="mb-3">
+        <label for="register-password" class=" form-label">Password</label>
+        <input type= "password" name= "password" class= "form-control" id="register-password" minlength="3"/>
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+​
+ </div>
+<%- include('./partials/footerAdmin') %>

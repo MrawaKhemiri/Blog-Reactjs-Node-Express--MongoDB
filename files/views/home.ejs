@@ -1,0 +1,101 @@
+<%- include('./partials/headerhome') %>
+<main>
+        <div class="container-fluid">
+            <div id="content" class="mx-auto tm-content-container">
+                <main>
+                    <div class=" mx-0 px-0">
+                        <div >
+                            <h2 class="tm-page-title mb-8">
+                               Conseils et Idées pour vos prochaines vacances
+                            </h2>
+                            
+                            <div class="tm-categories-container mb-5 row">
+                                <h3 class="tm-text-primary tm-categories-text">Themes:</h3>
+                                <ul class="nav tm-category-list col-7">
+                                        
+                                        <%   categories.forEach( (categorie) =>{ %>
+                                            <li class="nav-item tm-category-item">
+                                            <a href="/articles/<%= categorie._id %>" class="nav-link tm-category-link active"><%= categorie.title%></a>
+                                            </li>
+                                        <% }) %>
+            
+                                    </ul>
+                               
+                                    <form method="post" action="/search" class="input-group col-3">
+                                        <div class="form-outline">
+                                            <input type="search" name="search" id="form1" class="form-control" />
+                                        </div>
+                                        <button type="submit"  class="btn btn-primary" >
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </form>
+                               
+                            </div> 
+                            
+                        </div>
+                                   
+                    </div>
+                    
+                    <div class="row tm-catalog-item-list">
+                         <% articles.forEach(article=>{ %>
+                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="/uploads/<%= article.image %>" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title"><%= article.category.title %>: <a href="/detail/<%=article._id%>" class="tm-text-primary mb-3 tm-catalog-item-title"><%= article.title %></a>  </h3>
+                                <p class="tm-catalog-item-text"> <%= article.content.substr(0,100)+"..." %>
+                                   <p> <span class="tm-text-secondary">Créé le:  <%= article.postedAt %></span></p></p>
+                            </div>
+                        </div>
+                          <% }) %>
+                       
+                        
+                       
+                    </div>
+
+                   
+                </main>
+
+                <!-- Subscribe form and footer links -->
+                <div class="row mt-5 pt-3">
+                    <div class="col-xl-6 col-lg-12 mb-4">
+                        <div class="tm-bg-gray p-5 h-100">
+                            <h3 class="tm-text-primary mb-3">Voulez-vous recevoir nos dernières mises à jour?</h3>
+                            <p class="mb-5">Veuillez vous inscrire à notre espace pour les nouvelles articles à venir et les dernières informations sur notre travail.</p>
+                            <form action="" method="GET" class="tm-subscribe-form">
+                                <input type="text" name="email" placeholder="Email..." required>
+                                <button type="submit" class="btn rounded-0 btn-primary tm-btn-small">Inscrivez vous</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                        <div class="p-5 tm-bg-gray">
+                            <h3 class="tm-text-primary mb-4">Notre objectif</h3>
+                            <ul class="list-unstyled tm-footer-links">
+                                <li>Nous parcourons le Monde à la recherche de bons plans,
+                                     d’astuces pour vous aider à voyager plus facilement.</li>
+                               
+                            </ul>    
+                        </div>                        
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                        <div class="p-5 tm-bg-gray h-100">
+                            <h3 class="tm-text-primary mb-4">Réseaux sociaux</h3>
+                            <ul class="list-unstyled tm-footer-links">
+                                <a href=""><i class="fab fa-twitter text-primary"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-instagram-square"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                            </ul>  
+                        </div>                        
+                    </div>
+                </div> <!-- row -->
+
+    
+            </div> <!-- tm-content-container -->
+        </div>
+</main>
+<%- include('./partials/footerAdmin') %>
+

@@ -1,0 +1,81 @@
+<%- include('./partials/headerAdmin') %>
+<main id="main-article1" class="row">
+     <div class="list-group col-lg-4">
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-home"></i> Tableau de bord
+        </a>
+        
+        <a
+          href="articles-boots.html"
+          class="list-group-item list-group-item-action active text-light"
+          ><i class="fas fa-paragraph"></i> Gestions des Articles
+        </a>
+       <a href="categories-boots.html" class="list-group-item list-group-item-action"
+          ><i class="fas fa-folder"></i> Gestion des Categories
+        </a>
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-tags"></i> Tags
+        </a>
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-file"></i> Fichiers
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action text-secondary"
+        >
+          Paramètres
+        </a>
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-users"></i> utilisateurs
+        </a>
+       
+      </div>
+      <div class="col-lg-8">
+        
+        <form method="post" class="px-md-3 formulaire">
+            <nav class="navbar row">
+                  <a class="navbar-brand text-dark col-3"> <strong>Mise à jour d'un article</strong></a>
+                  <input type="submit" class="btn btn-primary col-2 offset-3" value="Valider"/>
+                </nav>
+        
+          <label>Categorie de l'article</label>
+          <div class="input-group">
+            <select
+              class="custom-select"
+              id="inputGroupSelect04"
+              aria-label="Example select with button addon"
+              name="category"
+            >
+            
+            <% categories.forEach(category=>{ %>
+				{# # la fonction equals() pour comparer deux objectId du mongoose # #}
+				<% if(category._id.equals(article.category._id)){ %>
+					<option value="<%= category._id%>" selected>
+						<%= category.title%>
+					</option>
+				<% }else{%>
+					<option value="<%= category._id%>">
+						<%= category.title%>
+					</option>
+				<%}%>
+			<%})%>
+             
+            </select>
+          </div>
+          <label class="col-lg-12 py-md-2 px-md-0">Titre de l'article</label>
+          <input
+            type="text"
+            name="title"
+            placeholder="Lorem ipsum dolor sit amet consectetur"
+            class="col-lg-12 py-md-1"
+            value="<%=article.title%>"
+          />
+          <label class="col-lg-12 py-md-2 px-md-0">Contenu de l'article</label>
+          <textarea rows="10" cols="70" class="col-lg-12" name="content"
+placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, corporis! Dolor aliquid neque vitae accusantium cupiditate tempore est voluptate eveniet unde quibusdam repellendus vero"><%=article.content%></textarea
+          ><br /><br />
+        </form>
+      </div>
+    </main>
+
+ <%- include('./partials/footerAdmin') %>

@@ -1,0 +1,25 @@
+
+
+<%- include('./partials/headerAdmin') %>
+<div class="register ">
+    <form action="/login" method="post" >
+      <h3 class="mb-4">Login</h3>
+      <div class="mb-3">
+        <label for="register-email" class="form-label">Email address</label>
+        <input type= "email" name= "email" class= "form-control" id="register-email" aria-describedly="emailHelp" />
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <div class="mb-3">
+        <label for="register-password" class=" form-label">Password</label>
+        <input type= "password" name= "password" class= "form-control" id="register-password" />
+        <div id="emailHelp" class="form-text"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+      
+      <a href="/signup">Vous n'avez pas de compte?</a> 
+     
+    </form>
+​   
+ </div>
+<%- include('./partials/footerAdmin') %>

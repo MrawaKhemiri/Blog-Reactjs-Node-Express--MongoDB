@@ -1,0 +1,63 @@
+.list-group a {
+  border: none;
+  border-radius: 5px;
+  color: #007bf9;
+}
+.list-group a {
+  background-color: rgba(255, 255, 255, 0);
+}
+.list-group a:nth-child(3) {
+  color: #075fb6;
+}
+.list-group {
+  background-color: rgba(128, 128, 128, 0.055);
+  padding: 0 2%;
+}
+
+table {
+  margin: 0 2%;
+}
+tr td:nth-child(3) {
+  text-align: right;
+}
+.pagination {
+  width: 31%;
+  margin: auto;
+}
+.ajout
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.formulaire
+{
+  border: rgba;
+}
+textarea
+{
+  border-color: ;
+  color
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  main {
+    padding: 2%;
+  }
+  .list-group {
+    display: none;
+  }
+  .table {
+    width: 100%;
+  }
+
+  .btn-outline-secondary {
+    font-size: 0.7rem;
+  }
+  
+  .btn-outline-danger {
+    font-size: 0.8rem;
+  }
+  header .btn-outline-secondary, .fade .btn-outline-secondary, main nav .btn-outline-secondary{
+    font-size: 1rem;
+  }
+}

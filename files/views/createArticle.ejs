@@ -1,0 +1,69 @@
+<%- include('./partials/headerAdmin') %>
+ <main id="main-article1" class="row">
+     <div class="list-group col-lg-4">
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-home"></i> Tableau de bord
+        </a>
+        <a
+          href="articles-boots.html"
+          class="list-group-item list-group-item-action active text-light"
+          ><i class="fas fa-paragraph"></i> Gestions des Articles
+        </a>
+       <a href="categories-boots.html" class="list-group-item list-group-item-action"
+          ><i class="fas fa-folder"></i> Gestion des Categories
+        </a>
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-tags"></i> Tags
+        </a>
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-file"></i> Fichiers
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action text-secondary"
+        >
+          Paramètres
+        </a>
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-users"></i> utilisateurs
+        </a>
+       
+      </div>
+      <div class="col-lg-8">
+        
+        <form class="px-md-3 formulaire" method="post" enctype="multipart/form-data">
+           
+                <nav class="navbar row">
+                  <a class="navbar-brand text-dark col-3"> <strong>Rédiger un article</strong></a>
+                  <input type="submit" class="btn btn1 btn-primary col-2 offset-3" value="Valider"/>
+                </nav>
+            
+          <label>Categorie de l'article</label>
+          <div class="input-group">
+            <select name="category" class="custom-select"
+              id="inputGroupSelect04">
+              <% categories.forEach(category=>{ %>
+
+                      <option value="<%= category._id%>"> <%= category.title%></option>
+
+              <%})%>
+          </select>
+          </div>
+          <label class="col-lg-12 py-md-2 px-md-0">Titre de l'article</label>
+          <input
+            type="text"
+            name="title"
+            placeholder="Lorem ipsum dolor sit amet consectetur"
+            class="col-lg-12 py-md-1"
+          />
+          <input type="file" name="myimg"  >
+          <label class="col-lg-12 py-md-2 px-md-0">Contenu de l'article</label>
+          <textarea rows="10" cols="70" class="col-lg-12" name="content"
+           placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, corporis! Dolor aliquid neque vitae accusantium cupiditate tempore est voluptate eveniet unde quibusdam repellendus vero"></textarea
+          ><br /><br />
+        </form>
+      </div>
+      
+    </main>
+	<%- include('./partials/footerAdmin') %>
+

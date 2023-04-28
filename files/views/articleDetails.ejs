@@ -1,0 +1,40 @@
+<%- include('./partials/headerdetail') %>
+<main>
+		
+
+		<div class="container-fluid tm-content-container mx-auto pt-4">
+			<!-- Subscribe form and footer links -->
+            <div class="row pt-3">
+                <div class="col-xl-6 col-lg-12 mb-4">
+                    <div class="tm-bg-gray p-5 h-100">
+                        <h3 class="tm-text-primary mb-3">Dans la catégorie:<%= article.category.title %>
+                           <p class="tm-text-primary mb-3"><%= article.title %></p> </h3>
+                        <p class="mb-5">Description: <%= article.content %> </p>
+                        <p> <span class="tm-text-secondary">Créé le:  <%= article.postedAt %></span></p>
+                        <form action="/comment/<%= article._id %>" method="post" class="tm-subscribe-form">
+                            <input type="text" name="cTitle" placeholder="Ajouter votre titre..." required>
+                            <input type="submit" class="btn rounded-0 btn-primary tm-btn-small py-2" value="Soumettre"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mb-4 p-5 tm-bg-gray">
+                    
+                        <h3 class="tm-text-primary mb-4">Liste des commentaires</h3>
+                        <div class="">
+                            <% comments.forEach(comment=>{  %>
+                               <p class="text-white comment pl-3 rounded"> <i class="fa fa-comment text-white" aria-hidden="true"></i>  <%= comment.title %></p>
+                            <% }) %>
+                           
+                           
+                        </div>    
+                                        
+                </div>
+                
+            </div> <!-- row -->
+
+           
+		</div>		
+	</div>
+    </main>
+
+<%- include('./partials/footerAdmin') %>

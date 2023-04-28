@@ -1,0 +1,86 @@
+<%- include('./partials/headerAdmin') %>
+<main class="row">
+      <div class="list-group col-lg-4">
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-home"></i> Tableau de bord
+        </a>
+        
+        <a
+          href=""
+          class="list-group-item list-group-item-action active text-light"
+          ><i class="fas fa-paragraph"></i> Gestions des Articles
+        </a>
+       <a href="/createCategory"" class="list-group-item list-group-item-action"
+          ><i class="fas fa-folder"></i> Gestion des Categories
+        </a>
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-tags"></i> Tags
+        </a>
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-file"></i> Fichiers
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action text-secondary"
+        >
+          Paramètres
+        </a>
+        <a href="#" class="list-group-item list-group-item-action"
+          ><i class="fas fa-users"></i> utilisateurs
+        </a>
+       
+      </div>
+      <div class="col-lg-8">
+        <div class="row py-lg-3 py-md-3 ">
+          <div class="col-lg-12">
+          <nav class="navbar ">
+            <a href="article1.html" class="navbar-brand text-dark">Liste des Articles</a>
+            <form class="form-inline">
+              <button type="button" class="btn btn-primary">
+              <i class="fas fa-plus"></i><a href="/createArticle" class="text-white"> Ajouter un article</a>
+            </button>
+            </form>
+          </nav>
+        </div>
+          
+         <table class="table table-striped" border="1px" width="100%">
+            <thead>
+                  <tr>
+                    <th class="col-lg-5 col-md-6">Titre</td>
+                    <th class="col-lg-3 col-md-3">Date de modification</td>
+                    <th class="col-lg-4 col-md-3 text-right" >Actions</td>
+                  </tr>
+           </thead>
+           <tbody>
+            <% articles.forEach(article=>{ %>
+               
+            <tr>
+               <td> <%= article.title %></td>
+               <td> <%= article.postedAt %></td>
+               <td>
+                <a class="btn btn-outline-secondary" href="/update/<%= article._id %>" > <i class="fas fa-pencil-alt"></i>Modifier</a>
+
+                <a href="/delete/<%= article._id %>" class="btn btn-outline-danger" > <i class="fas fa-trash-alt"></i>Supprimer</a>
+                </td>
+            </tr>
+             <% }) %>
+               
+          </tbody>
+          </table>
+          <!--bootstrap modal pour afficher message en -->
+         
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link " href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+      </nav>
+      </div>
+    </main>
+    <%- include('./partials/footerAdmin') %>
